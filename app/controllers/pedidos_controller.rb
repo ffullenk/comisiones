@@ -110,7 +110,7 @@ class PedidosController< ApplicationController
    @pedido = @producto.pedidos.build(params[:pedido].merge!(:vendedor_id => current_vendedor.id))
     respond_to do |format|
       if @pedido.save
-        format.html { redirect_to [@producto,@pedido], notice: 'Pedido was successfully created.' }
+        format.html { redirect_to pedido_vendedor_path(current_vendedor.id,@pedido.id), notice: 'El Pedido fue enviado exitosamente.' }
        
       else
         format.html { render action: "new" }
@@ -126,7 +126,7 @@ class PedidosController< ApplicationController
 
     respond_to do |format|
       if @pedido.update_attributes(params[:pedido])
-        format.html { redirect_to @pedido, notice: 'Pedido was successfully updated.' }
+        format.html { redirect_to @pedido, notice: 'El Pedido fue actualizado exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

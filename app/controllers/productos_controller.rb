@@ -58,7 +58,7 @@ before_filter :authenticate_empresa!, :only => [:new,:create,:edit, :update, :de
 
     respond_to do |format|
       if @producto.save
-        format.html { redirect_to @producto, notice: 'Producto was successfully created.' }
+        format.html { redirect_to producto_empresa_path(current_empresa.id,@producto), notice: 'El Producto fue publicado exitosamente.' }
         format.json { render json: @producto, status: :created, location: @producto }
       else
         format.html { render action: "new" }
@@ -74,7 +74,7 @@ before_filter :authenticate_empresa!, :only => [:new,:create,:edit, :update, :de
 
     respond_to do |format|
       if @producto.update_attributes(params[:producto])
-        format.html { redirect_to @producto, notice: 'Producto was successfully updated.' }
+        format.html { redirect_to @producto, notice: 'El Producto fue actualizado exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -92,6 +92,19 @@ before_filter :authenticate_empresa!, :only => [:new,:create,:edit, :update, :de
     respond_to do |format|
       format.html { redirect_to productos_url }
       format.json { head :no_content }
+    end
+  end
+
+
+   def show_empresa
+      #muestra detalle de pedido de producto a empresa
+      @producto = Producto.find(params[:producto_id])
+ 
+   
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @pedido }
     end
   end
 end

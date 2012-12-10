@@ -134,6 +134,12 @@ es:
     links:
       cancel: Cancelar
       back:   Atrás
+      edit:   Editar
+      destroy: Eliminar
+      actions: Acciones
+      new: Nuevo
+      new_producto: Agregar Producto
+
   number:
     currency:
       format:

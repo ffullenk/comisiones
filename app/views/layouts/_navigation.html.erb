@@ -10,9 +10,8 @@
 	
 	<li>
 		<%= link_to "Salir", destroy_vendedor_session_path, :method =>:delete %></li>
-	<% else %>
-	<li>
-		<%= link_to 'Ingresa como Vendedor', new_vendedor_session_path %></li>
+
+
 
 	<%end%>
 
@@ -24,10 +23,5 @@
 	<li>
 		<%= link_to "Salir", destroy_empresa_session_path, :method =>:delete %></li>
 
-	<% else%>
-	<li>
-		<%= link_to "Registrate empresa", new_empresa_registration_path %></li>
-	<li>
-		<%= link_to "Entrar empresa", new_empresa_session_path %></li>
 
 	<% end %></ul>

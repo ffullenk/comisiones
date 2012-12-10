@@ -5,11 +5,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th>ID Producto</th>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:precio) %></th>
-      <th><%= model_class.human_attribute_name(:descripcion) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
+      <th>Publicado</th>
+      <th>Pedidos totales</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -18,9 +19,10 @@
       <tr>
         <td><%= link_to producto.id, producto_path(producto) %></td>
         <td><%= producto.nombre %></td>
-        <td><%= producto.precio %></td>
-        <td><%= producto.descripcion %></td>
-        <td><%=l producto.created_at %></td>
+        <td><%= number_to_currency(producto.precio) %></td>
+        
+        <td><%=distance_of_time_in_words(producto.created_at, Time.now) %></td>
+        <td><%= producto.pedidos.count %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_producto_path(producto), :class => 'btn btn-mini' %>
@@ -35,6 +37,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new_producto', :default => t("helpers.links.new_producto")),
             new_producto_path,
             :class => 'btn btn-primary' %>

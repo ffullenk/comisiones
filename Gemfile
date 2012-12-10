@@ -22,3 +22,5 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem 'devise'
 gem 'simple_form'
 gem 'nested_scaffold'
+gem 'rmagick'
+gem 'paperclip'

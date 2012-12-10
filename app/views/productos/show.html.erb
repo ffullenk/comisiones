@@ -1,6 +1,6 @@
 <%- model_class = Producto -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h2><%=@producto.nombre %></h2>
 </div>
 
 <dl class="dl-horizontal">
@@ -17,7 +17,7 @@
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               productos_path, :class => 'btn'  %>
+              <%= link_to "Hacer pedido",
+                new_producto_pedido_path(:producto_id => @producto.id), :class => 'btn btn-primary' %>
 </div>
 
-
-<%= link_to "Hacer pedido", new_producto_pedido_path(:producto_id => @producto.id) %>
