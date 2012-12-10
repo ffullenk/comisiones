@@ -19,11 +19,11 @@
     <% @pedidos.each do |pedido| %>
       <tr>
         <td><%= pedido.id %></td>
-        <td><%= link_to Producto.find(pedido.producto_id).nombre, producto_path(pedido.producto_id)  %></td>
-        <td><%= Vendedor.find(pedido.vendedor_id).nombre %></td>
+        <td><%= link_to pedido.producto.nombre, producto_empresa_path(current_empresa.id,pedido.producto_id)  %></td>
+        <td><%= pedido.vendedor.nombre %></td>
        
         <td><%= pedido.cantidad %></td>
-        <td><%=l pedido.created_at, :format => :long %></td>
+        <td><%=l pedido.created_at, :format =>:long %></td>
           <td><%= pedido.confirmado %></td>
         <td>
           <%= link_to "Abrir",

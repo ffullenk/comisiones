@@ -107,7 +107,7 @@ class PedidosController< ApplicationController
   def create
     #@pedido = Pedido.new(params[:pedido].merge!(:vendedor => current_vendedor))
 
-   @pedido = @producto.pedidos.build(params[:pedido].merge!(:vendedor_id => current_vendedor.id))
+   @pedido = @producto.pedidos.build(params[:pedido].merge!(:vendedor_id => current_vendedor.id).merge!(:empresa_id => @producto.empresa_id))
     respond_to do |format|
       if @pedido.save
         format.html { redirect_to pedido_vendedor_path(current_vendedor.id,@pedido.id), notice: 'El Pedido fue enviado exitosamente.' }

@@ -17,11 +17,11 @@
   <tbody>
     <% @productos.each do |producto| %>
       <tr>
-        <td><%= link_to producto.id, producto_path(producto) %></td>
-        <td><%= producto.nombre %></td>
+        <td><%= link_to producto.id, producto_empresa_path(current_empresa.id,producto.id) %></td>
+        <td><%= link_to producto.nombre, producto_empresa_path(current_empresa.id,producto.id) %></td>
         <td><%= number_to_currency(producto.precio) %></td>
         
-        <td><%=distance_of_time_in_words(producto.created_at, Time.now) %></td>
+        <td><%=l producto.created_at, :format =>:long  %></td>
         <td><%= producto.pedidos.count %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

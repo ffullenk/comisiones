@@ -6,7 +6,7 @@
 	<%if vendedor_signed_in? %>
 
 	<li>
-		<%= link_to "Mis Pedidos", pedidos_path  %></li>
+		<%= link_to "Mis Pedidos", pedidos_vendedor_path(current_vendedor.id)  %></li>
 	
 	<li>
 		<%= link_to "Salir", destroy_vendedor_session_path, :method =>:delete %></li>

@@ -28,7 +28,7 @@
       <td>
         <%= pedido.id %></td>
       <td>
-        <%= link_to Producto.find(pedido.producto_id).nombre, producto_path(pedido.producto_id)  %></td>
+        <%= link_to pedido.producto.nombre, producto_path(pedido.producto_id)  %></td>
 
       <td>
         <%= pedido.cantidad %></td>
