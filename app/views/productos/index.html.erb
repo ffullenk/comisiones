@@ -1,29 +1,142 @@
-<%- model_class = Producto -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nombre) %></th>
-      <th><%= model_class.human_attribute_name(:precio) %></th>
-      <th><%= model_class.human_attribute_name(:descripcion) %></th>
-      <th>Agregado</th>
-    
-    </tr>
-  </thead>
-  <tbody>
-    <% @productos.each do |producto| %>
-      <tr>
-        <td><%= link_to producto.id, producto_path(producto) %></td>
-        <td><%= link_to producto.nombre, producto_path(producto) %></td>
-        <td><%= number_to_currency(producto.precio) %></td>
-        <td><%= producto.descripcion %></td>
-        <td><%= distance_of_time_in_words(producto.created_at, Time.now)  %></td>
-       
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
+
+
+
+
+<div id="wrapper">
+  <div id="columns">
+
+    
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+        ac blandit dui. Duis rutrum porta tortor ut convallis.
+        Duis rutrum porta tortor ut convallis.
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
+      <p>
+        Donec a fermentum nisi. 
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+      <p>
+        Nullam eget lectus augue. Donec eu sem sit amet ligula 
+        faucibus suscipit. Suspendisse rutrum turpis quis nunc 
+        convallis quis aliquam mauris suscipit.
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/8/8kEc1hS.png" />
+      <p>
+        Nullam eget lectus augue. Donec eu sem sit amet ligula 
+        faucibus suscipit. Suspendisse rutrum turpis quis nunc 
+        convallis quis aliquam mauris suscipit.
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
+      <p>
+        Donec a fermentum nisi. Integer dolor est, commodo ut 
+        sagittis vitae, egestas at augue. 
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+        ac blandit dui. Duis rutrum porta tortor ut convallis.
+        Duis rutrum porta tortor ut convallis.
+      </p>
+    </div>  
+    
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
+      <p>
+        Nullam eget lectus augue. Donec eu sem sit amet ligula 
+        faucibus suscipit. Suspendisse rutrum turpis quis nunc 
+        convallis quis aliquam mauris suscipit.
+        Duis rutrum porta tortor ut convallis.
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
+      <p>
+        Nullam eget lectus augue. 
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/8/8kEc1hS.png" />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed feugiat consectetur pellentesque. 
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
+      <p>
+        Donec a fermentum nisi. Integer dolor est, commodo ut 
+        sagittis vitae, egestas at augue. Suspendisse id nulla 
+        ac urna vestibulum mattis. Duis rutrum porta tortor ut convallis.
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
+      <p>
+        Donec a fermentum nisi. Integer dolor est, commodo ut 
+        sagittis vitae, egestas at augue. Suspendisse id nulla 
+        ac urna vestibulum mattis. 
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+        ac blandit dui. Duis rutrum porta tortor ut convallis.
+      </p>
+    </div>  
+    
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
+      <p>
+        Donec a fermentum nisi. Integer dolor est, commodo ut 
+        sagittis vitae, egestas at augue. Suspendisse id nulla 
+        ac urna vestibulum mattis. 
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
+      <p>
+        Donec a fermentum nisi. Integer dolor est, commodo ut 
+        sagittis vitae, egestas at augue. Suspendisse id nulla 
+        ac urna vestibulum mattis. 
+      </p>
+    </div>
+  
+    <div class="pin">
+      <img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+        ac blandit dui. Duis rutrum porta tortor ut convallis.
+      </p>
+    </div>
+  </div>
+</div>

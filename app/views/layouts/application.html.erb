@@ -1,35 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Comisiones" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Comisiones" %>">
-    <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-    <%= yield(:head) %>
-  </head>
-  <body class="<%= controller_name %> <%= action_name %>">
-    <header class="navbar navbar-inverse navbar-fixed-top">
-      <nav class="navbar-inner">
-        <div class="container">
-          <%= render 'layouts/navigation' %>
-        </div>
-      </nav>
-    </header>
-    <div id="main" role="main">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Comisiones" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Comisiones" %>
+  ">
+  <%= stylesheet_link_tag "application", :media =>
+  "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %></head>
+<body class="<%= controller_name %>
+  <%= action_name %>
+  ">
+  <%if (controller_name.eql? "home") || (controller_name.eql? "sessions")  %>
+  
+  <div id="main" role="main">
+   
+    <div class="container-narrow">
+       <%= render 'layouts/messages' %>
+       <%= render "home/masthead" %>
+        <%= yield %>
+
+    </div>
+    <!--! end of .container --> </div>
+  <!--! end of #main -->
+
+
+
+  <%else%>
+
+
+  <header class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar-inner">
       <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
-          </div>
-          <footer>
-          </footer>
+        <%= render 'layouts/navigation' %>
+      </div>
+    </nav>
+  </header>
+
+  <div id="main" role="main">
+
+    <div class="container">
+      
+        <div class="span12">
+           <%= render 'layouts/messages' %>
+        <%= yield %>
         </div>
-      </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
-  </body>
+    
+    <!--! end of .container --> </div>
+  <!--! end of #main -->
+
+
+  <%end%>
+
+
+
+
+
+
+
+
+
+
+
+
+  <hr>
+  <footer>
+    <div class="footer">
+      <p>&copy; Comisiones.cl 2012  <%= controller_name %>  <%= action_name %>  </p>
+    </div>
+  </footer>
+</body>
 </html>
