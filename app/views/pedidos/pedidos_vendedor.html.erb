@@ -1,0 +1,44 @@
+<%- model_class = Pedido -%>
+<div class="page-header">
+  <h1>
+    <%=t '.title', :default =>
+    model_class.model_name.human.pluralize %> Realizados</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        <%= model_class.human_attribute_name(:id) %></th>
+      <th>
+        <%= model_class.human_attribute_name(:producto_id) %></th>
+
+      <th>
+        <%= model_class.human_attribute_name(:cantidad) %></th>
+      <th>
+        <%= model_class.human_attribute_name(:created_at) %></th>
+      <th>
+        <%= model_class.human_attribute_name(:confirmado) %></th>
+      <th>
+        <%=t '.actions', :default =>t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pedidos.each do |pedido| %>
+    <tr>
+      <td>
+        <%= pedido.id %></td>
+      <td>
+        <%= link_to Producto.find(pedido.producto_id).nombre, producto_path(pedido.producto_id)  %></td>
+
+      <td>
+        <%= pedido.cantidad %></td>
+      <td>
+        <%=l pedido.created_at, :format =>:long %></td>
+      <td>
+        <%= pedido.confirmado %></td>
+      <td>
+        <%= link_to "Abrir",
+                      pedido_vendedor_path(current_vendedor,pedido), :class =>'btn btn-mini' %></td>
+    </tr>
+    <% end %></tbody>
+</table>

@@ -1,1 +1,33 @@
-<%= link_to "Comisiones", root_path, :class => 'brand' %>
+<%= link_to "Comisiones.cl", root_path, :class =>
+'brand' %>
+<ul class="nav">
+	<li>
+		<%= link_to "Productos", productos_path  %></li>
+	<%if vendedor_signed_in? %>
+
+	<li>
+		<%= link_to "Mis Pedidos", pedidos_path  %></li>
+	
+	<li>
+		<%= link_to "Salir", destroy_vendedor_session_path, :method =>:delete %></li>
+	<% else %>
+	<li>
+		<%= link_to 'Ingresa como Vendedor', new_vendedor_session_path %></li>
+
+	<%end%>
+
+	<% if empresa_signed_in? && !vendedor_signed_in? %>
+	<li>
+		<%= link_to "Ver mis Productos", productos_empresa_path(current_empresa.id) %></li>
+	<li>
+		<%= link_to "Ver Pedidos Recibidos", pedidos_empresa_path(current_empresa.id) %></li>
+	<li>
+		<%= link_to "Salir", destroy_empresa_session_path, :method =>:delete %></li>
+
+	<% else%>
+	<li>
+		<%= link_to "Registrate empresa", new_empresa_registration_path %></li>
+	<li>
+		<%= link_to "Entrar empresa", new_empresa_session_path %></li>
+
+	<% end %></ul>

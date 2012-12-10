@@ -1,0 +1,27 @@
+<%- model_class = Pedido -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:producto_id) %>:</strong></dt>
+  <dd><%= @pedido.producto_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:vendedor_id) %>:</strong></dt>
+  <dd><%= @pedido.vendedor_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:empresa_id) %>:</strong></dt>
+  <dd><%= @pedido.empresa_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cantidad) %>:</strong></dt>
+  <dd><%= @pedido.cantidad %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              producto_pedidos_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_producto_pedido_path(@producto,@pedido), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              producto_pedido_path(@producto,@pedido),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

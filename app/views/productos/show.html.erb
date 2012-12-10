@@ -1,0 +1,23 @@
+<%- model_class = Producto -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
+  <dd><%= @producto.nombre %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:precio) %>:</strong></dt>
+  <dd><%= @producto.precio %></dd>
+   <dt><strong>Empresa:</strong></dt>
+  <dd><%= @producto.empresa.nombre %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
+  <dd><%= @producto.descripcion %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              productos_path, :class => 'btn'  %>
+</div>
+
+
+<%= link_to "Hacer pedido", new_producto_pedido_path(:producto_id => @producto.id) %>
