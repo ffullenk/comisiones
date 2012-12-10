@@ -8,7 +8,7 @@ class Empresa < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :nombre
   # attr_accessible :title, :body
-
+  validates :email, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   has_many :productos
   has_many :pedidos
   has_many :vendedors, :through => :pedidos

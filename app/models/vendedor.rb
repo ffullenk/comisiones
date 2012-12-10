@@ -6,9 +6,19 @@ class Vendedor < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :nombre
   # attr_accessible :title, :body
-
+  has_many :authentications, :dependent => :delete_all
   has_many :pedidos
   has_many :empresas, :through => :assignments
+  validates :email, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
+
+  def apply_omniauth(auth)
+  # In previous omniauth, 'user_info' was used in place of 'raw_info'
+  self.email = auth['extra']['raw_info']['email']
+  self.nombre  = auth['extra']['raw_info']['name']
+  #self.location = auth['info']['location']
+  # Again, saving token is optional. If you haven't created the column in authentications table, this will fail
+  authentications.build(:provider => auth['provider'], :uid => auth['uid'], :token => auth['credentials']['token'])
+end
 end
