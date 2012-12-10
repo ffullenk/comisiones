@@ -1,8 +1,10 @@
 ---
+facebook-connect-button.png: facebook-connect-button-27bde1ff8cd4eea8528608dcb141a719.png
+facebook-connect-button/index.png: facebook-connect-button-27bde1ff8cd4eea8528608dcb141a719.png
 application.js: application-03b62cd7e42d1e459591e152bb6580bd.js
 application/index.js: application-03b62cd7e42d1e459591e152bb6580bd.js
-application.css: application-9d0a9aa75bc3c25377ac09ca9daf08b0.css
-application/index.css: application-9d0a9aa75bc3c25377ac09ca9daf08b0.css
+application.css: application-8e8f59276c6bde8bbf29fd6d9e6b11a9.css
+application/index.css: application-8e8f59276c6bde8bbf29fd6d9e6b11a9.css
 fontawesome-webfont.eot: fontawesome-webfont-5f9bf001d945baa3287193f70ac71c68.eot
 fontawesome-webfont/index.eot: fontawesome-webfont-5f9bf001d945baa3287193f70ac71c68.eot
 fontawesome-webfont.svg: fontawesome-webfont-9c8b49b9721b8663e25842f77bd78bd9.svg
