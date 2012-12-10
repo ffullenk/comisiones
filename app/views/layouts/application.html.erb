@@ -13,7 +13,7 @@
 <body class="<%= controller_name %>
   <%= action_name %>
   ">
-  <%if (controller_name.eql? "home") || (controller_name.eql? "sessions")  %>
+  <%if (controller_name.eql? "home") || (controller_name.eql? "sessions") || (controller_name.eql? "registrations")   %>
   
   <div id="main" role="main">
    
@@ -74,3 +74,6 @@
   </footer>
 </body>
 </html>
+
+
+<%= controller_name %>

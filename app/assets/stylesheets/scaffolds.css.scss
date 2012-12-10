@@ -20,13 +20,20 @@ pre {
 
 a {
   color: #000;
-  &:visited {
-    color: white;
-  }
+ 
   &:hover {
     color: #fff;
     background-color: #000;
   }
+}
+
+a.btn {
+  
+   &:visited {
+    color: white;
+  }
+
+
 }
 
 div {
@@ -66,4 +73,13 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:#6cf;
 }
