@@ -1,0 +1,225 @@
+
+---
+productos:
+  columns:
+  - id
+  - nombre
+  - precio
+  - descripcion
+  - created_at
+  - updated_at
+  - empresa_id
+  - avatar_file_name
+  - avatar_content_type
+  - avatar_file_size
+  - avatar_updated_at
+  records: 
+  - - 3
+    - Facundo Garcia Schwaderer
+    - 19000
+    - ! "ombre de la empresa:BRAVADO WINES\r\n\r\nAñada2009\r\n\r\nFormato750 ml\r\n\r\nColorTinto\r\n\r\nCategoríaVino
+      tranquilo\r\n\r\nPaís/RegiónChile\r\n\r\nClasificaciónD.O.\r\n\r\nPorcentaje
+      de alcohol14 %\r\n\r\nReference Price10 USD\r\n\r\nPorcentaje de azúcar0-5 g/l\r\n\r\nAcidezMedia\r\n\r\nDulzorSin
+      Sensación\r\n\r\nMaderaMadera Integrada\r\n\r\nEdadListo Para Beber"
+    - '2012-12-10 04:21:04.350708'
+    - '2012-12-10 04:21:04.350708'
+    - 1
+    - Facundo_Garcia_Schwaderer.jpg
+    - image/jpeg
+    - 15721
+    - '2012-12-10 04:21:03.709406'
+  - - 4
+    - Marina Garcia Schwaderer
+    - 18000
+    - ! 'Casablanca Valley - 2011 - Blanco - Chile - Valle casablanca - Sauvignon
+      blanc - 750 ml '
+    - '2012-12-10 04:23:05.152088'
+    - '2012-12-10 04:23:05.152088'
+    - 1
+    - Marina_Garcia_Schwaderer.jpg
+    - image/jpeg
+    - 15517
+    - '2012-12-10 04:23:04.769738'
+  - - 5
+    - Sofia Garcia Schwaderer
+    - 23000
+    - ! 'Casablanca Valley - 2010 - Tinto - Chile - Valle casablanca - Pinot noir
+      - 750 ml '
+    - '2012-12-10 04:27:43.016144'
+    - '2012-12-10 04:27:43.016144'
+    - 1
+    - Sofia_Garcia_Schwaderer.jpg
+    - image/jpeg
+    - 8328
+    - '2012-12-10 04:27:42.671171'
+  - - 6
+    - Sofia Garcia Schwaderer
+    - 23000
+    - ! 'Casablanca Valley - 2010 - Tinto - Chile - Valle casablanca - Pinot noir
+      - 750 ml '
+    - '2012-12-10 04:28:10.067960'
+    - '2012-12-10 04:28:10.067960'
+    - 1
+    - Sofia_Garcia_Schwaderer.jpg
+    - image/jpeg
+    - 8328
+    - '2012-12-10 04:28:09.731222'
+  - - 7
+    - VIGNO by Garcia Schwaderer
+    - 25000
+    - ! 'Valle del Maule - 2009 - Tinto - Chile - Valle del Maule - Cariñena - 750
+      ml '
+    - '2012-12-10 04:38:28.239017'
+    - '2012-12-10 04:38:28.239017'
+    - 1
+    - VIGNO_by_Garcia_Schwaderer.jpg
+    - image/jpeg
+    - 29683
+    - '2012-12-10 04:38:27.910340'
+  - - 8
+    - Motorola DROID RAZR MAXX HD 4G
+    - 257000
+    - Smartphone Motorola DROID RAZR MAXX HD 4G
+    - '2012-12-10 04:39:35.379633'
+    - '2012-12-10 04:39:35.379633'
+    - 1
+    - Motorola_DROID_RAZR_MAXX_HD_4G.jpg
+    - image/jpeg
+    - 5168
+    - '2012-12-10 04:39:35.059678'
+  - - 9
+    - Samsung Brightside Phone
+    - 190460
+    - Smartphone Samsung Brightside Phone
+    - '2012-12-10 04:40:12.813836'
+    - '2012-12-10 04:40:12.813836'
+    - 1
+    - Samsung_Brightside_Phone.jpg
+    - image/jpeg
+    - 14993
+    - '2012-12-10 04:40:12.523482'
+  - - 10
+    - Samsung Galaxy S III 4G
+    - 320900
+    - Smartphone Samsung Galaxy S III 4G
+    - '2012-12-10 04:40:45.074931'
+    - '2012-12-10 04:40:45.074931'
+    - 1
+    - Samsung_Galaxy_S_III_4G.jpg
+    - image/jpeg
+    - 13862
+    - '2012-12-10 04:40:44.770707'
+  - - 11
+    - Unnecto U-100-2NA eco
+    - 21000
+    - Teléfono celular Unnecto U-100-2NA eco
+    - '2012-12-10 04:41:11.583643'
+    - '2012-12-10 04:41:11.583643'
+    - 1
+    - Unnecto_U-100-2NA_eco.jpg
+    - image/jpeg
+    - 8665
+    - '2012-12-10 04:41:11.301726'
+
+---
+vendedors:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  - nombre
+  records: 
+  - - 1
+    - francisco000@gmail.com
+    - $2a$10$hX83xW8Y1N1NgHUEneIpbOFS6GK802jYdUe0JfOl/LsvJKp.gqVTC
+    - 
+    - 
+    - 
+    - 6
+    - '2012-12-10 04:58:36.158581'
+    - '2012-12-10 02:53:06.695166'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2012-12-08 22:06:59.808996'
+    - '2012-12-10 04:58:36.160772'
+    - Francisco Fullenkamp
+
+---
+pedidos:
+  columns:
+  - id
+  - producto_id
+  - vendedor_id
+  - empresa_id
+  - cantidad
+  - created_at
+  - updated_at
+  - confirmado
+  records: 
+  - - 4
+    - 4
+    - 1
+    - 
+    - 5
+    - '2012-12-10 05:19:02.394379'
+    - '2012-12-10 05:19:02.394379'
+    - false
+  - - 5
+    - 7
+    - 1
+    - 
+    - 3
+    - '2012-12-10 05:24:01.480175'
+    - '2012-12-10 05:24:01.480175'
+    - false
+  - - 6
+    - 7
+    - 1
+    - 
+    - 5
+    - '2012-12-10 05:27:05.263147'
+    - '2012-12-10 05:27:05.263147'
+    - false
+
+---
+empresas:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  - nombre
+  records: 
+  - - 1
+    - francisco000@gmail.com
+    - $2a$10$Ff/bkCkKDWemwpuj7za.2eqTUgjy53NRAz4.5ro212WoVXzGBhjHC
+    - 
+    - 
+    - 
+    - 4
+    - '2012-12-10 03:03:49.957519'
+    - '2012-12-09 21:31:06.286647'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2012-12-09 00:15:33.578520'
+    - '2012-12-10 03:03:49.959629'
+    - Falabella

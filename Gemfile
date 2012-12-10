@@ -24,7 +24,7 @@ gem 'simple_form'
 gem 'nested_scaffold'
 gem 'rmagick'
 gem 'paperclip'
-
+gem 'yaml_db'
 group :production do
 	gem 'pg'
 	gem "thin", ">= 1.5.0"
