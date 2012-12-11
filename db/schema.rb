@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210040216) do
+ActiveRecord::Schema.define(:version => 20121211031750) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "vendedor_id"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(:version => 20121210040216) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "catalogos", :force => true do |t|
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "producto_id"
+    t.integer  "vendedor_id"
+  end
+
+  add_index "catalogos", ["producto_id", "vendedor_id"], :name => "index_catalogos_on_producto_id_and_vendedor_id", :unique => true
 
   create_table "empresas", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -11,6 +11,7 @@ class Vendedor < ActiveRecord::Base
   has_many :authentications, :dependent => :delete_all
   has_many :pedidos
   has_many :empresas, :through => :assignments
+  has_many :catalogos
   validates :email, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
 
   def apply_omniauth(auth)

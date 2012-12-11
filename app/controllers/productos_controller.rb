@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ProductosController < ApplicationController
 
 before_filter :authenticate_empresa!, :only => [:new,:create,:edit, :update, :destroy, :productos_empresa]
@@ -28,6 +29,15 @@ before_filter :authenticate_empresa!, :only => [:new,:create,:edit, :update, :de
   # GET /productos/1.json
   def show
     @producto = Producto.find(params[:id])
+
+    @catalogo = Catalogo.where(:vendedor_id=>current_vendedor.id, :producto_id=>@producto.id)
+
+
+    if @catalogo.empty?
+      @enCatalogo = false
+    else
+      @enCatalogo = true
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -107,4 +117,8 @@ before_filter :authenticate_empresa!, :only => [:new,:create,:edit, :update, :de
       format.json { render json: @pedido }
     end
   end
+
+
+
+
 end

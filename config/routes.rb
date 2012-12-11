@@ -2,6 +2,9 @@ Comisiones::Application.routes.draw do
 
 
 
+  resources :catalogos
+
+
   devise_for :empresas
 
   resources :productos do
@@ -24,9 +27,10 @@ Comisiones::Application.routes.draw do
 
 
   #Rutas Vendedores
-
+  match "/vendedors/:vendedor_id/catalogo" =>"catalogos#catalogo_vendedor", :as => "catalogo_vendedor"
   match "/vendedors/:vendedor_id/pedidos" =>"pedidos#pedidos_vendedor", :as => "pedidos_vendedor"
   match "/vendedors/:vendedor_id/pedidos/:pedido_id" =>"pedidos#show_vendedor", :as => "pedido_vendedor"
+  match "/vendedors/:vendedor_id/productos/:producto_id/agregar" =>"catalogos#agregar_producto_catalogo_vendedor", :as => "agregar_producto_catalogo_vendedor"
 
 
   #Fin Rutas Vendedores

@@ -1,23 +1,44 @@
 <%- model_class = Producto -%>
 <div class="page-header">
-  <h2><%=@producto.nombre %></h2>
+  <h2>
+    <%=@producto.nombre %></h2>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
-  <dd><%= @producto.nombre %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:precio) %>:</strong></dt>
-  <dd><%= @producto.precio %></dd>
-   <dt><strong>Empresa:</strong></dt>
-  <dd><%= @producto.empresa.nombre %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
-  <dd><%= @producto.descripcion %></dd>
+  <dt> <strong><%= model_class.human_attribute_name(:nombre) %>:</strong>
+  </dt>
+  <dd>
+    <%= @producto.nombre %></dd>
+  <dt> <strong><%= model_class.human_attribute_name(:precio) %>:</strong>
+  </dt>
+  <dd>
+    <%= @producto.precio %></dd>
+  <dt>
+    <strong>Empresa:</strong>
+  </dt>
+  <dd>
+    <%= @producto.empresa.nombre %></dd>
+  <dt>
+    <strong>
+      <%= model_class.human_attribute_name(:descripcion) %>:</strong>
+  </dt>
+  <dd>
+    <%= @producto.descripcion %></dd>
 </dl>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
+  <%= link_to t('.back', :default =>
+  t("helpers.links.back")),
               productos_path, :class => 'btn'  %>
-              <%= link_to "Hacer pedido",
-                new_producto_pedido_path(:producto_id => @producto.id), :class => 'btn btn-primary' %>
-</div>
+  <%= link_to "Hacer pedido",
+                new_producto_pedido_path(:producto_id =>
+  @producto.id), :class => 'btn btn-primary' %>
 
+  <%if @enCatalogo.eql? false %>
+  <%= link_to "Agregar a Mi Catálogo",
+                agregar_producto_catalogo_vendedor_path(current_vendedor.id, @producto.id), :class =>'btn btn-success' %>
+<%end%>
+              </div>
+
+
+         
