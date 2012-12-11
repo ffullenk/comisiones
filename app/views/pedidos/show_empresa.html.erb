@@ -12,7 +12,12 @@
   <dt><strong><%= model_class.human_attribute_name(:cantidad) %>:</strong></dt>
   <dd><%= @pedido.cantidad %></dd>
   <dt><strong><%= model_class.human_attribute_name(:confirmado) %>:</strong></dt>
-  <dd><%= @pedido.confirmado %></dd>
+ <%if @pedido.confirmado.eql? true %>
+  <dd>Si</dd>
+  <%else%>
+  <dd>No</dd>
+ <%end%>
+
 </dl>
 
 <div class="form-actions">

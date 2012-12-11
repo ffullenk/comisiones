@@ -4,6 +4,7 @@ class Pedido < ActiveRecord::Base
   belongs_to :producto
   belongs_to :vendedor
   belongs_to :empresa
+  has_one :cliente
 end
 
 

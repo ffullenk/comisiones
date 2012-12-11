@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121211031750) do
+ActiveRecord::Schema.define(:version => 20121211140753) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "vendedor_id"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(:version => 20121211031750) do
   end
 
   add_index "catalogos", ["producto_id", "vendedor_id"], :name => "index_catalogos_on_producto_id_and_vendedor_id", :unique => true
+
+  create_table "clientes", :force => true do |t|
+    t.string   "nombre"
+    t.string   "direccion"
+    t.string   "ciudad"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "pedido_id"
+  end
 
   create_table "empresas", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -71,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20121211031750) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "comision"
   end
 
   create_table "vendedors", :force => true do |t|

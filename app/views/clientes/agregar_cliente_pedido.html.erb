@@ -1,0 +1,20 @@
+<h1>Agregar datos de Cliente</h1>
+
+<%= simple_form_for(@cliente, :html => {:class => 'form-horizontal' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre, :required=>true %>
+    <%= f.input :direccion, :required=>true ,:label=>"Dirección"%>
+    <%= f.input :ciudad, :required=>true %>
+    <%= f.input :email , :required=>true  %>
+    <%= f.hidden_field :pedido_id, :value => @pedido.id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit ,"Enviar", :class=>"btn btn-primary" %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Atrás', clientes_path, :class=>"btn" %>

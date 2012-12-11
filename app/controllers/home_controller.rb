@@ -1,13 +1,13 @@
 class HomeController < ApplicationController
   def index
 
-  	if vendedor_signed_in?
+  	if vendedor_signed_in? && !empresa_signed_in?
   		vendedor_home
   		
   	end
 
 
-  	if empresa_signed_in?
+  	if empresa_signed_in? && !vendedor_signed_in?
   		empresa_home
   		
   	end
@@ -22,4 +22,9 @@ class HomeController < ApplicationController
   	redirect_to productos_path
 
   end
+
+  def comisiones_vendedor
+    @pedidos = Pedido.where(:vendedor_id=>current_vendedor.id, :confirmado=>true)
+  end
+
 end

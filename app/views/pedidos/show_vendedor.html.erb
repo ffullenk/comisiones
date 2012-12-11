@@ -10,12 +10,34 @@
  
   <dt><strong><%= model_class.human_attribute_name(:cantidad) %>:</strong></dt>
   <dd><%= @pedido.cantidad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:precio) %>:</strong></dt>
+  <dd><%= @pedido.cantidad %> x <%= number_to_currency(@pedido.producto.precio) %> </dd>
   <dt><strong><%= model_class.human_attribute_name(:confirmado) %>:</strong></dt>
   
   <%if @pedido.confirmado.eql? true %>
   <dd>Si</dd>
   <%else%>
   <dd>No</dd>
+
+
+
+<%end%>
+
+
+
+
+<% if !@pedido.cliente.nil? %>
+<dt><strong>Nombre Cliente:</strong></dt>
+  <dd><%= @pedido.cliente.nombre %></dd>
+
+  <dt><strong>Dirección:</strong></dt>
+  <dd><%= @pedido.cliente.direccion %></dd>
+
+  <dt><strong>Ciudad:</strong></dt>
+  <dd><%= @pedido.cliente.ciudad %></dd>
+
+  <dt><strong>Email:</strong></dt>
+  <dd><%= @pedido.cliente.email %></dd>
 
 <%end%>
    
@@ -24,6 +46,9 @@
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               pedidos_vendedor_path, :class => 'btn'  %>
+<%if ((@pedido.confirmado.eql? true) && (@pedido.cliente.nil?)) %>
+  <%= link_to "Cargar datos cliente",
+              agregar_cliente_pedido_path(current_vendedor.id,@pedido.id), :class => 'btn btn-success'  %>
 
-
+<%end%>
 </div>
