@@ -26,6 +26,7 @@ gem 'rmagick'
 gem 'paperclip'
 gem 'yaml_db'
 gem 'omniauth-facebook'
+gem "paperclip-dropbox"
 group :production do
 	gem 'pg'
 	gem "thin", ">= 1.5.0"

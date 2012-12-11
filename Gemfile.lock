@@ -47,6 +47,8 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     diff-lcs (1.1.3)
+    dropbox-sdk (1.5.1)
+      json
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -100,6 +102,9 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.4.0)
       mime-types
+    paperclip-dropbox (1.0.1)
+      dropbox-sdk (~> 1.3)
+      paperclip (~> 3.1)
     pg (0.14.1)
     polyglot (0.3.3)
     quiet_assets (1.0.1)
@@ -189,6 +194,7 @@ DEPENDENCIES
   nested_scaffold
   omniauth-facebook
   paperclip
+  paperclip-dropbox
   pg
   quiet_assets (>= 1.0.1)
   rails (= 3.2.9)
