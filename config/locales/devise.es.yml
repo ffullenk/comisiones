@@ -12,6 +12,7 @@ es:
         resend_confirmation: "Reenviar las instrucciones de confirmación"
       send_instructions: "Recibirás un correo con instrucciones acerca de como confirmar tu cuenta en pocos minutos."
     failure:
+
       inactive: "Tu cuenta aún no ha sido activada."
       invalid: "Nombre de usuario o contraseña incorrecta."
       invalid_token: "Identificador de autenticación inválido."
@@ -23,6 +24,10 @@ es:
       invitation_token_invalid: "¡Disculpa, la invitación no es válida!"
       send_instructions: "Tu invitación ha sido enviada."
       updated: "Tu contraseña ha sido modificada. Ya has entrado a tu cuenta."
+    vendedor:
+        not_found_in_database: Usuario Vendedor no encontrado.
+    empresa:
+        not_found_in_database: Usuario Empresa no encontrado.
     mailer:
       confirmation_instructions:
         confirm: "Confirmar mi cuenta"
