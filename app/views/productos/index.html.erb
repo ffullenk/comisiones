@@ -3,8 +3,14 @@
   <h1>Catálogo de productos</h1>
 </div>
 
+<% if (@productos.count.eql? 0)%>    
+    <h3>No tenemos productos para mostrar.</h3>
+
+    <%else %>
 <div id="wrapper">
   <div id="columns">
+
+
 
 <%@productos.each do |producto| %>    
     <div class="pin">
@@ -25,5 +31,8 @@
   
   <%end%>
 
+
   </div>
-</div>
+</div>   
+
+<%end%>

@@ -3,12 +3,14 @@
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="<%= url_for root_path %>">Inicio</a></li>
+           <li><a href="<%= url_for new_vendedor_session_path %>">Vendedores</a></li>
            <li><a href="<%= url_for new_empresa_session_path %>">Empresas</a></li>
            <li><a href="<%= url_for productos_path %>">Catálogo</a></li>
-          <li><a href="#">Quiénes somos?</a></li>
+          
+
           <li><a href="#">Contáctanos</a></li>
         </ul>
-        <h3 class="muted">Comisiones.cl</h3>
+        <h3 class="muted"><%= link_to "Comisiones.cl", root_path%></h3>
       </div>
 
       <hr>

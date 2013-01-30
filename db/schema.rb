@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121211140753) do
+ActiveRecord::Schema.define(:version => 20130103052249) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "vendedor_id"
@@ -39,6 +39,12 @@ ActiveRecord::Schema.define(:version => 20121211140753) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "pedido_id"
+  end
+
+  create_table "comunas", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "empresas", :force => true do |t|
@@ -84,6 +90,12 @@ ActiveRecord::Schema.define(:version => 20121211140753) do
     t.integer  "comision"
   end
 
+  create_table "universidads", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "vendedors", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -98,6 +110,10 @@ ActiveRecord::Schema.define(:version => 20121211140753) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "nombre"
+    t.string   "rut"
+    t.string   "direccion"
+    t.integer  "comuna_id"
+    t.integer  "universidad_id"
   end
 
   add_index "vendedors", ["email"], :name => "index_vendedors_on_email", :unique => true

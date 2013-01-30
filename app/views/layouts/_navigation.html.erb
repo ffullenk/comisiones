@@ -13,6 +13,10 @@
 
 		<li>
 		<%= link_to "Mis Comisiones", comisiones_vendedor_path(current_vendedor.id)  %></li>
+
+
+		<li>
+		<%= link_to "Mi Perfil", miperfil_vendedor_path(current_vendedor.id)  %></li>
 	
 	<li>
 		<%= link_to "Salir", destroy_vendedor_session_path, :method =>:delete %></li>

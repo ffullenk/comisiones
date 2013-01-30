@@ -13,30 +13,18 @@
 <body class="<%= controller_name %>
   <%= action_name %>
   ">
+ 
   
-
-
-  <header class="navbar navbar-inverse navbar-fixed-top">
-    <nav class="navbar-inner">
-      <div class="container">
-        <%= render 'layouts/navigation' %>
-      </div>
-    </nav>
-  </header>
-
-  <hr>
   <div id="main" role="main">
-
-    <div class="container">
-      
-        <div class="span12">
-           <%= render 'layouts/messages' %>
+   
+    <div class="container-narrow">
+       <%= render 'layouts/messages' %>
+       <%= render "home/masthead" %>
         <%= yield %>
-        </div>
-    
+
+    </div>
     <!--! end of .container --> </div>
   <!--! end of #main -->
-
 
 
 

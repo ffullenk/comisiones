@@ -2,6 +2,13 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %> de empresa <%=@empresa.nombre %></h1>
 </div>
+
+<% if (@productos.count.eql? 0) %>
+
+   <h3>No existen productos para mostrar.</h3>
+
+   <%else%>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -37,6 +44,7 @@
   </tbody>
 </table>
 
+   <%end%>
 <%= link_to t('.new_producto', :default => t("helpers.links.new_producto")),
             new_producto_path,
             :class => 'btn btn-primary' %>

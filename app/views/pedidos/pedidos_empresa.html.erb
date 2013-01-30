@@ -2,6 +2,13 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %> de empresa <%=@empresa.nombre %></h1>
 </div>
+
+<% if (@pedidos.count.eql? 0) %>
+
+   <h3>No existen pedidos para mostrar.</h3>
+
+   <%else%>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -34,4 +41,6 @@
     <% end %>
   </tbody>
 </table>
+
+   <%end%>
 

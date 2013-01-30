@@ -1,44 +1,89 @@
-<%- model_class = Pedido -%>
 <div class="page-header">
-  <h1>
-    <%=t '.title', :default =>
-    model_class.model_name.human.pluralize %> Realizados</h1>
+  <h1>Mis Pedidos <small>Estos son todos los pedidos que has realizado.</small></h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>
-        <%= model_class.human_attribute_name(:id) %></th>
-      <th>
-        <%= model_class.human_attribute_name(:producto_id) %></th>
 
-      <th>
-        <%= model_class.human_attribute_name(:cantidad) %></th>
-      <th>
-        <%= model_class.human_attribute_name(:created_at) %></th>
-      <th>
-        <%= model_class.human_attribute_name(:confirmado) %></th>
-      <th>
-        <%=t '.actions', :default =>t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @pedidos.each do |pedido| %>
-    <tr>
-      <td>
-        <%= pedido.id %></td>
-      <td>
-        <%= link_to pedido.producto.nombre, producto_path(pedido.producto_id)  %></td>
+<form method="post" action="#" class="form-inline well well-small pull-right">
+  <input type="hidden" value="products" name="action">
+  <input type="text" placeholder="Ingresa un pedido a buscar" value="" name="q" class="span3">
+  <button class="btn btn-success" type="submit">Filtrar</button>
+</form>
 
-      <td>
-        <%= pedido.cantidad %></td>
-      <td>
-        <%=l pedido.created_at, :format =>:long %></td>
-      <td>
-        <%= pedido.confirmado %></td>
-      <td>
-        <%= link_to "Ver detalle",
-                      pedido_vendedor_path(current_vendedor,pedido), :class =>'btn btn-mini btn-success' %></td>
-    </tr>
-    <% end %></tbody>
-</table>
+<div style="padding-top:9px"><%= @pedidos.count %> Pedido(s) Encontrado(s), Página 1 de 1</div>
+
+<form class="clearfix" action="#" method="post">
+  <input type="hidden" value="bulkdomain" name="action">
+  <table class="table table-bordered-outside table-striped table-sorted">
+    <thead>
+      <tr>
+        <th class="sort-asc"><a title="Domain" href="clientarea.php?action=domains&amp;orderby=domain">ID Pedido</a></th>
+        <th><a  href="#">Producto</a></th>
+        <th><a  href="#">Cantidad</a></th>
+        <th><a  href="#">Fecha pedido</a></th>
+        <th><a  href="#">Estado</a></th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pedidos.each do |pedido| %>
+      <tr>
+        
+        <td><a target="_blank" href="#"> <%= pedido.id %>/a></td>
+        <td><%= link_to pedido.producto.nombre, producto_path(pedido.producto_id)  %></td>
+        <td><%= pedido.cantidad %></td>
+        <td><%=l pedido.created_at, :format =>:long %></td>
+
+        <td><span class="label label-active"><%= pedido.confirmado %></span></td>
+        <td><a class="btn" href="<%= pedido_vendedor_path(current_vendedor,pedido) %>">Ver detalle</a></td>
+      </tr>
+       <% end %>
+    </tbody>
+    <!-- <tfoot class="hide" id="bulkmanagementactions">
+      <tr>
+        <td colspan="7">
+          Bulk Management Actions:
+          <input type="submit" class="btn btn-inverse btn-small" value="Manage Nameservers" name="nameservers">
+          <input type="submit" class="btn btn-inverse btn-small" value="Auto Renewal Status" name="autorenew">
+          <input type="submit" class="btn btn-inverse btn-small" value="Registrar Lock Status" name="reglock">
+          <input type="submit" class="btn btn-inverse btn-small" value="Edit Contact Information" name="contactinfo">
+          <input type="submit" class="btn btn-inverse btn-small" value="Renew Domains" name="renew">
+        </td>
+      </tr>
+    </tfoot> -->
+  </table>
+</form>
+
+<form class="pull-right" action="/billing/clientarea.php" method="post">
+  <fieldset>
+    <input type="hidden" value="domains" name="action"> 
+    <select onchange="submit()" name="itemlimit">
+      <option>Resultados por página</option>
+      <option selected="selected" value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+      <option value="all">Todos</option>
+    </select>
+  </fieldset>
+</form>
+
+<div class="pagination">
+  <ul>
+    <li class="disabled"><a href="javascript:return false;">← Pág. Previa</a></li>
+    <li class="disabled"><a href="javascript:return false;">  Pág. Siguiente→</a></li>
+  </ul>
+</div>
+
+
+<script type="text/javascript">
+  $(function() {
+    $('.domids').change(function() {
+      if($('.domids').filter( ":checked" ).length &gt; 0) {
+        $('#bulkmanagementactions').fadeIn();
+      } else {
+        $('#bulkmanagementactions').fadeOut();
+      }
+    });
+  });
+</script>
+
+
