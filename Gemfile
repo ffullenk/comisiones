@@ -31,7 +31,7 @@ group :production do
 	gem 'pg'
 	
 end
-
+gem 'errorapp_notifier'
 group :development do
 	gem 'sqlite3'
 	gem 'quiet_assets'

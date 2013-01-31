@@ -1,0 +1,9 @@
+# Place this file into config folder of your RailsRoot
+api-key: '10c79cd9-5ac4-46b9-a603-850c1548eae5'
+development:
+ enabled: false
+production:
+  enabled: true
+staging:
+  api-key: '10c79cd9-5ac4-46b9-a603-850c1548eae5' # You can change if you have create different project
+  enabled: true
