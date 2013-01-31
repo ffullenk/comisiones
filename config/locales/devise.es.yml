@@ -20,14 +20,15 @@ es:
       timeout: "Tu sesión caducó, debes acceder de nuevo para continuar."
       unauthenticated: "Necesitas iniciar sesión o registrarte antes de continuar."
       unconfirmed: "Tienes que confirmar tu cuenta antes de continuar."
+      vendedor:
+        not_found_in_database: Usuario Vendedor no encontrado.
+      empresa:
+        not_found_in_database: Usuario Empresa no encontrado.
     invitations:
       invitation_token_invalid: "¡Disculpa, la invitación no es válida!"
       send_instructions: "Tu invitación ha sido enviada."
       updated: "Tu contraseña ha sido modificada. Ya has entrado a tu cuenta."
-    vendedor:
-        not_found_in_database: Usuario Vendedor no encontrado.
-    empresa:
-        not_found_in_database: Usuario Empresa no encontrado.
+    
     mailer:
       confirmation_instructions:
         confirm: "Confirmar mi cuenta"

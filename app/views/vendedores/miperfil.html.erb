@@ -11,7 +11,7 @@
             Valparaiso<br>
              <%= @vendedor.rut %><br>
               <a href="mailto:francisco000@gmail.com"><%= @vendedor.email %></a><br>
-              <%= @vendedor.universidad.nombre %><br>
+              <%= @vendedor.universidad.nombre if @vendedor.universidad %><br>
            
         </address> 
 
@@ -25,7 +25,7 @@
             <li>Number de pedidos confirmados: <a href="clientarea.php?action=domains"><strong>1</strong> (1) - View »</a></li>
             <li>Número de productos vendiendo: <a href="supporttickets.php"><strong>0</strong> - View »</a></li>
             <li>Number of Referred Signups: <a href="affiliates.php"><strong>0</strong> - View »</a></li>
-            <li>Información cuenta bancaria: <strong>Use Default (Set Per Order)</strong> (Mastercard-9149) - <a href="clientarea.php?action=creditcard">Actualizar »</a></li>
+            <li>Información cuenta bancaria: <strong>Use Default (Set Per Order)</strong> (Mastercard-9149) - <a href="#">Actualizar »</a></li>
         </ul>
     </div>
 </div>
