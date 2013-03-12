@@ -1,8 +1,5 @@
 #   Copyright (c) 2010-2012, Diaspora Inc.  This file is
 #   licensed under the Affero General Public License version 3 or later.  See
-#   the COPYRIGHT file.
-
-
 
 es:
   devise:
@@ -90,6 +87,8 @@ es:
       destroyed: "¡Adiós! Tu cuenta ha sido cancelada. Esperamos volver a verte pronto."
       signed_up: "Te has registrado correctamente."
       updated: "Tu cuenta ha sido actualizada."
+      vendedor:
+       signed_up_but_inactive: "Listo! dentro de poco nos contactaremos contigo para activar tu cuenta."
     sessions:
       new:
         alpha_software: "Estás a punto de usar la versión alpha."

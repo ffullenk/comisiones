@@ -20,6 +20,10 @@ class Vendedor < ActiveRecord::Base
   belongs_to :comuna
   belongs_to :universidad
 
+  def active_for_authentication?
+  super && active?
+  end
+
   def apply_omniauth(auth)
   # In previous omniauth, 'user_info' was used in place of 'raw_info'
   self.email = auth['extra']['raw_info']['email']
