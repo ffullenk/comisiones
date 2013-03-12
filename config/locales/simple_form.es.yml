@@ -10,6 +10,11 @@ es:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Por favor revise los siguientes problemas:"
+    options:
+      vendedor:
+        gender:
+          male: 'Masculino'
+          female: 'Femenino'
     # Labels and hints examples
     # labels:
     #   defaults:
@@ -23,4 +28,3 @@ es:
     #   defaults:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'
-

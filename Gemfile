@@ -28,7 +28,7 @@ gem 'omniauth-facebook'
 gem "paperclip-dropbox"
 gem 'thin'
 group :production do
-	gem 'pg'
+	#gem 'pg'
 	
 end
 gem 'errorapp_notifier'

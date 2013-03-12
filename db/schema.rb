@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130103052249) do
+ActiveRecord::Schema.define(:version => 20130312173944) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "vendedor_id"
@@ -114,6 +114,8 @@ ActiveRecord::Schema.define(:version => 20130103052249) do
     t.string   "direccion"
     t.integer  "comuna_id"
     t.integer  "universidad_id"
+    t.string   "telefono"
+    t.string   "gender"
   end
 
   add_index "vendedors", ["email"], :name => "index_vendedors_on_email", :unique => true
