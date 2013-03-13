@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Empresa < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
