@@ -17,6 +17,7 @@ Comisiones::Application.routes.draw do
   devise_for :vendedors
 
   root :to => "home#index"
+  match '/legal' => 'home#legal', :as => "legal"
   match '/auth/:provider/callback' => 'authentications#create'
  #Rutas Empresas
   match "/empresas/:empresa_id/productos" =>"productos#productos_empresa", :as => "productos_empresa"

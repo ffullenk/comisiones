@@ -27,4 +27,8 @@ class HomeController < ApplicationController
     @pedidos = Pedido.where(:vendedor_id=>current_vendedor.id, :confirmado=>true)
   end
 
+  def legal
+  end
+  
+
 end
