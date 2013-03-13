@@ -7,7 +7,7 @@
     <%= f.input :rut, :required => true ,:hint => "Ej. 12.345.678-9"%>
     <%= f.input :direccion, :required => true, :label=> "Dirección" %>
     <%= f.association :comuna , collection: Comuna.all(order: 'nombre'), :label => 'Comuna', :include_blank => false, :label_method => :nombre %>
-    <%= f.association :universidad , :label => 'Universidad', :include_blank => false, :label_method => :nombre %>
+    <%= f.association :universidad , collection: Universidad.all(order: 'nombre'), :label => 'Institución', :include_blank => false, :label_method => :nombre %>
     <%= f.input :gender, collection: [:male, :female], :label=> "Sexo", include_blank: false  %>
     <%= f.input :telefono, :required => true, :label=> "Teléfono" %>
     <%= f.input :email, :required => true, :autofocus => true %>

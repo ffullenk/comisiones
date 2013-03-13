@@ -8,8 +8,8 @@
     <%= f.input :email, :required => true, :autofocus => true %>
     <%= f.input :rut, :required => true ,:hint => "Ej. 12.345.678-9"%>
     <%= f.input :direccion, :required => true, :label=> "Dirección" %>
-    <%= f.association :comuna , :label => 'Comuna', :include_blank => false, :label_method => :nombre %>
-    <%= f.association :universidad , :label => 'Universidad', :include_blank => false, :label_method => :nombre %>
+    <%= f.association :comuna , collection: Comuna.all(order: 'nombre'), :label => 'Comuna', :include_blank => false, :label_method => :nombre %>
+    <%= f.association :universidad , collection: Universidad.all(order: 'nombre'), :label => 'Institución', :include_blank => false, :label_method => :nombre %>
     <%= f.input :password, :autocomplete => "off", :hint => "déjalo en blanco si no quieres cambiarla.", :required => false %>
     <%= f.input :password_confirmation, :required => false, :label=> "Confirmar Password" %>
     <%= f.input :current_password, :label=> "Password actual", :hint => "necesitamos tu password actual para confirmar tus cambios.", :required => true %>
