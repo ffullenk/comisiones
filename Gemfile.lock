@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:gonzalo-bulnes/chilean_cities.git
+  revision: 94a2998455a7fb35527e5a49ca6405008ca5bb18
+  specs:
+    chilean_cities (0.1.0)
+      rails (~> 3.2.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -187,6 +194,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  chilean_cities!
   coffee-rails (~> 3.2.1)
   devise
   errorapp_notifier

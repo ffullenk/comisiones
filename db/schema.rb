@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312194157) do
+ActiveRecord::Schema.define(:version => 20130313001316) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "vendedor_id"
@@ -43,8 +43,12 @@ ActiveRecord::Schema.define(:version => 20130312194157) do
 
   create_table "comunas", :force => true do |t|
     t.string   "nombre"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "code"
+    t.string   "provincia"
+    t.string   "region"
+    t.string   "region_number"
   end
 
   create_table "empresas", :force => true do |t|

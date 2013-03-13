@@ -37,3 +37,5 @@ group :development do
 	gem 'quiet_assets'
 	gem "therubyracer", ">= 0.10.2", :platform => :ruby
 end
+
+gem 'chilean_cities', git: 'git@github.com:gonzalo-bulnes/chilean_cities.git'
