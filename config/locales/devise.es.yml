@@ -89,6 +89,8 @@ es:
       updated: "Tu cuenta ha sido actualizada."
       vendedor:
        signed_up_but_inactive: "Listo! dentro de poco nos contactaremos contigo para activar tu cuenta."
+      empresa:
+       signed_up_but_inactive: "Datos enviados, dentro de poco nos contactaremos usted para activar su cuenta."
     sessions:
       new:
         alpha_software: "Estás a punto de usar la versión alpha."

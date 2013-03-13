@@ -5,9 +5,16 @@
 
   <div class="form-inputs">
     <%= f.input :email, :required => true, :autofocus => true %>
-    <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
+    <%= f.input :rut, :required => true ,:disabled => true%>
+    <%= f.input :representante, :required => true, :label=>"Representante legal" %>
+    <%= f.input :direccion, :required => true, :label=> "Dirección" %>
+    <%= f.input :telefono, :required => true, :label=> "Teléfono" %>
+    <%= f.association :comuna , collection: Comuna.all(order: 'nombre'), :label => 'Comuna', :include_blank => false, :label_method => :nombre %>
+    <%= f.input :url, :label=>"Sitio Web", :autofocus => true %>
+
+    <%= f.input :password, :autocomplete => "off", :hint => "deje en blanco si no desea cambiar", :required => false %>
     <%= f.input :password_confirmation, :required => false %>
-    <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
+    <%= f.input :current_password, :hint => "necesitamos su password actual para confirmar", :required => true %>
   </div>
 
   <div class="form-actions">

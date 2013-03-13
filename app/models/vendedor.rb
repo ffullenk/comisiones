@@ -11,7 +11,7 @@ class Vendedor < ActiveRecord::Base
   # attr_accessible :title, :body
   has_many :authentications, :dependent => :delete_all
   has_many :pedidos
-  has_many :empresas, :through => :assignments
+  has_many :empresas, :through => :pedidos
   has_many :catalogos
   validates :email, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   #validates_uniqueness_of :rut, :format => { :with => /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\-(k|\d{1})\Z/i ,:message=>"Rut inválido"}
