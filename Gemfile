@@ -39,3 +39,5 @@ group :development do
 end
 
 gem 'chilean_cities', git: 'git@github.com:gonzalo-bulnes/chilean_cities.git'
+gem 'activeadmin'
+gem 'sass-rails'
