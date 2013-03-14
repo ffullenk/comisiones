@@ -32,4 +32,15 @@ class Vendedor < ActiveRecord::Base
   # Again, saving token is optional. If you haven't created the column in authentications table, this will fail
   authentications.build(:provider => auth['provider'], :uid => auth['uid'], :token => auth['credentials']['token'])
 end
+
+
+  after_create :welcome_mail
+
+  # ...
+
+private
+
+  def welcome_mail
+    VendedorMailer.welcome_mail(self).deliver
+  end
 end
