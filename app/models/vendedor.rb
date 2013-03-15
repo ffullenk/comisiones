@@ -1,10 +1,10 @@
 # encoding: UTF-8
 class Vendedor < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
+  # :token_authenticatable, ,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :nombre, :gender, :telefono, :rut, :direccion, :comuna_id, :universidad_id
@@ -34,9 +34,12 @@ class Vendedor < ActiveRecord::Base
 end
 
 
-  after_create :welcome_mail
+  #after_create :welcome_mail
 
-  # ...
+  def confirm!
+  super
+  welcome_mail
+end
 
 private
 

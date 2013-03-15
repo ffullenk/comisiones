@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Bienvenido a Comisiones.cl, <%= @empresa.nombre %></h1>
+    <p>
+      Su empresa ha sido registrada satisfactoriamente en nuestro sitio web,
+      su nombre de usuario es: <%= @empresa.email %>.<br/>
+      Dentro de poco nos contactaremos con usted para activar su cuenta como empresa.
+<br/>
+<br/>
+
+    </p>
+    <p>
+      Para ingresar al sitio, solo haga click en este link: <%= @url %>.
+    </p>
+    <p>Gracias por registrarse y que tenga un muy buen día!</p>
+<br/>
+    <footer>
+    <div class="footer">
+      <p>&copy; Comisiones.cl 2013 </p>
+    </div>
+  </footer>
+  </body>
+</html> 

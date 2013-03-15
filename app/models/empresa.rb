@@ -1,10 +1,10 @@
 # encoding: UTF-8
 class Empresa < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
+  # :token_authenticatable, 
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :nombre, :rut, :representante, :direccion, :telefono, :comuna_id, :url
@@ -20,5 +20,18 @@ class Empresa < ActiveRecord::Base
 
   def active_for_authentication?
   super && active?
+  end
+
+  #after_create :welcome_mail
+
+  def confirm!
+  super
+  welcome_mail
+end
+
+private
+
+  def welcome_mail
+    EmpresaMailer.welcome_mail(self).deliver
   end
 end

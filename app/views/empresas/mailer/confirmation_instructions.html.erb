@@ -1,5 +1,24 @@
-<p>Welcome <%= @resource.email %>!</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Sres. <%= @resource.nombre %>:</h1>
+    <p>
+      Su empresa ha sido registrada en nuestro sitio web pero necesitamos que nos confirme su dirección email
+      haciendo click en el siguiente link:<br/>
 
-<p>You can confirm your account email through the link below:</p>
-
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+      <p><%= link_to 'Confirmar', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<br/>
+<br/>
+	<p>Gracias!</p>
+    </p>
+<br/>
+    <footer>
+    <div class="footer">
+      <p>&copy; Comisiones.cl 2013 </p>
+    </div>
+  </footer>
+  </body>
+</html> 
