@@ -7,7 +7,7 @@ class Empresa < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :nombre, :rut, :representante, :direccion, :telefono, :comuna_id, :url
+  attr_accessible :email, :password, :password_confirmation,:active, :remember_me, :nombre, :rut, :representante, :direccion, :telefono, :comuna_id, :url
   # attr_accessible :title, :body
   validates :email, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   validates :rut, :uniqueness => true, :format => { :with => /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\-(k|\d{1})\Z/i ,:message=>"Rut inválido"}
