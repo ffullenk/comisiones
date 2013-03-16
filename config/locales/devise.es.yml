@@ -1,16 +1,15 @@
 #   Copyright (c) 2010-2012, Diaspora Inc.  This file is
 #   licensed under the Affero General Public License version 3 or later.  See
-
 es:
   devise:
     confirmations:
-      confirmed: "Tu cuenta ha sido confirmada. Ya has entrado a tu cuenta."
+      confirmed: "Su email ha sido confirmado."
       new:
         resend_confirmation: "Reenviar las instrucciones de confirmación"
       send_instructions: "Recibirás un correo con instrucciones acerca de como confirmar tu cuenta en pocos minutos."
     failure:
 
-      inactive: "Tu cuenta aún no ha sido activada."
+      inactive: "Su cuenta aún no ha sido activada para operar."
       invalid: "Nombre de usuario o contraseña incorrecta."
       invalid_token: "Identificador de autenticación inválido."
       locked: "Tu cuenta está bloqueada."
@@ -88,8 +87,10 @@ es:
       signed_up: "Te has registrado correctamente."
       updated: "Tu cuenta ha sido actualizada."
       vendedor:
+       signed_up_but_unconfirmed: "Listo! Te hemos enviado un email para confirmar tu cuenta"
        signed_up_but_inactive: "Listo! dentro de poco nos contactaremos contigo para activar tu cuenta."
       empresa:
+       signed_up_but_unconfirmed: "Listo! Le hemos enviado un email para confirmar su cuenta"
        signed_up_but_inactive: "Datos enviados, dentro de poco nos contactaremos usted para activar su cuenta."
     sessions:
       new:
