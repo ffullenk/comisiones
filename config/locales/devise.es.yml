@@ -1,5 +1,5 @@
 #   Copyright (c) 2010-2012, Diaspora Inc.  This file is
-es.devise.failure.admin_user.not_found_in_database
+
 es:
   devise:
     confirmations:
