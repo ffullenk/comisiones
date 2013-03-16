@@ -1,5 +1,5 @@
 #   Copyright (c) 2010-2012, Diaspora Inc.  This file is
-#   licensed under the Affero General Public License version 3 or later.  See
+es.devise.failure.admin_user.not_found_in_database
 es:
   devise:
     confirmations:
@@ -8,6 +8,8 @@ es:
         resend_confirmation: "Reenviar las instrucciones de confirmación"
       send_instructions: "Recibirás un correo con instrucciones acerca de como confirmar tu cuenta en pocos minutos."
     failure:
+      admin_user:
+        not_found_in_database: Usuario Administrador no encontrado.
 
       inactive: "Su cuenta aún no ha sido activada para operar."
       invalid: "Nombre de usuario o contraseña incorrecta."
