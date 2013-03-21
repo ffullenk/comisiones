@@ -86,6 +86,7 @@ GEM
     fastercsv (1.5.5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    google-analytics-rails (0.0.4)
     has_scope (0.5.1)
     hashie (1.2.0)
     hike (1.2.1)
@@ -241,6 +242,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   errorapp_notifier
+  google-analytics-rails
   jquery-rails
   less-rails
   nested_scaffold

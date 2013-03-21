@@ -41,3 +41,4 @@ end
 gem 'chilean_cities', git: 'git@github.com:gonzalo-bulnes/chilean_cities.git'
 gem 'activeadmin'
 gem 'sass-rails'
+gem 'google-analytics-rails'
