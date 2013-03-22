@@ -29,6 +29,25 @@ class HomeController < ApplicationController
 
   def legal
   end
+
+  def contacto
+    if params[:contacto]
+      if is_a_valid_email?(params[:contacto][:email])
+
+        ContactoMailer.contacto_mail(params[:contacto][:nombre],params[:contacto][:email],params[:contacto][:mensaje]).deliver
+
+
+        flash[:notice] = "Gracias por su mensaje."
+        redirect_to root_path
+      
+
+      else 
+        flash[:error] = "Email inválido"
+      end
+    end
+
+
+  end
   
 
 end

@@ -22,6 +22,7 @@ Comisiones::Application.routes.draw do
 
   root :to => "home#index"
   match '/legal' => 'home#legal', :as => "legal"
+  match '/contacto' => 'home#contacto', :as => "contacto"
   match '/auth/:provider/callback' => 'authentications#create'
  #Rutas Empresas
   match "/empresas/:empresa_id/productos" =>"productos#productos_empresa", :as => "productos_empresa"
