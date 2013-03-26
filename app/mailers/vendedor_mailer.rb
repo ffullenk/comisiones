@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class VendedorMailer < ActionMailer::Base
   default from: "\"Comisiones.cl\" <noresponder@comisiones.cl>"
 
