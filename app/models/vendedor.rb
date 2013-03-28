@@ -1,5 +1,7 @@
 # encoding: UTF-8
 class Vendedor < ActiveRecord::Base
+  after_update :mailActivacion
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, ,
   # :lockable, :timeoutable and :omniauthable
@@ -7,7 +9,7 @@ class Vendedor < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :nombre, :gender, :telefono, :rut, :direccion, :comuna_id, :universidad_id
+  attr_accessible :email,:active, :password, :password_confirmation, :remember_me, :nombre, :gender, :telefono, :rut, :direccion, :comuna_id, :universidad_id
   # attr_accessible :title, :body
   has_many :authentications, :dependent => :delete_all
   has_many :pedidos
@@ -46,4 +48,13 @@ private
   def welcome_mail
     VendedorMailer.welcome_mail(self).deliver
   end
+
+  def mailActivacion
+    if active?
+      VendedorMailer.activation_mail(self).deliver
+
+    end
+  end
+
+
 end

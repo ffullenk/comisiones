@@ -8,4 +8,11 @@ class VendedorMailer < ActionMailer::Base
     @url  = "http://www.comisiones.cl"
     mail(:to =>  email_with_name, :subject => "Bienvenido a Comisiones.cl")
   end
+
+  def activation_mail(vendedor)
+    @vendedor = vendedor
+    email_with_name = "#{@vendedor.nombre} <#{@vendedor.email}>"
+    @url  = "http://www.comisiones.cl"
+    mail(:to =>  email_with_name, :subject => "Bienvenido a Comisiones.cl :: Activación")
+  end
 end

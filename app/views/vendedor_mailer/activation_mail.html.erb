@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Bienvenido a Comisiones.cl, <%= @vendedor.nombre %>!</h1>
+    <h2>Hemos activado tu cuenta.</h2>
+    <p>
+      Te escribimos porque ya activamos tu acceso a nuestro portal,
+      y tu nombre de usuario es: <%= @vendedor.email %>.<br/>
+
+<br/>
+<br/>
+
+    </p>
+    <p>
+      Para ingresar al sitio, solo haz click en este link: <%= @url %>.
+    </p>
+    <p>Gracias por registrarte y que tengas un buen día!</p>
+<br/>
+    <footer>
+    <div class="footer">
+      <p>&copy; Comisiones.cl 2013 </p>
+    </div>
+  </footer>
+  </body>
+</html> 
