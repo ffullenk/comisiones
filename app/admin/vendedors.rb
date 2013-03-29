@@ -45,15 +45,15 @@ ActiveAdmin.register Vendedor do
    		end
 
    		row :comuna do |vendedor|
-     	 link_to vendedor.comuna.nombre, admin_comuna_path(vendedor.comuna)
+     	 (link_to vendedor.comuna.nombre, admin_comuna_path(vendedor.comuna)) if vendedor.comuna
     	end
 
 	    row :universidad do |vendedor|
-	      link_to vendedor.universidad.nombre, admin_universidad_path(vendedor.universidad)
+	      (link_to vendedor.universidad.nombre, admin_universidad_path(vendedor.universidad)) if vendedor.universidad
 	    end
 
 	     row :carrera do |vendedor|
-	      link_to vendedor.carrera.nombre, admin_carrera_path(vendedor.carrera)
+	      (link_to vendedor.carrera.nombre, admin_carrera_path(vendedor.carrera)) if vendedor.carrera
 	    end
 
 
