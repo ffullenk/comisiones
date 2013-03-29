@@ -8,3 +8,4 @@
 # Load the chilean cities
 load "#{Rails.root}/db/seeds/comunas.rb"
 load "#{Rails.root}/db/seeds/universidades.rb"
+load "#{Rails.root}/db/seeds/carreras.rb"

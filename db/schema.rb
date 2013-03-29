@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315233157) do
+ActiveRecord::Schema.define(:version => 20130329003254) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -53,6 +53,12 @@ ActiveRecord::Schema.define(:version => 20130315233157) do
     t.string   "token"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "carreras", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "catalogos", :force => true do |t|
@@ -168,6 +174,7 @@ ActiveRecord::Schema.define(:version => 20130315233157) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer  "carrera_id"
   end
 
   add_index "vendedors", ["confirmation_token"], :name => "index_vendedors_on_confirmation_token", :unique => true

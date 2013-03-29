@@ -17,11 +17,14 @@ ActiveAdmin.register Vendedor do
 
 
     column :comuna do |vendedor|
-      link_to vendedor.comuna.nombre, admin_comuna_path(vendedor.comuna)
+      (link_to vendedor.comuna.nombre, admin_comuna_path(vendedor.comuna)) if vendedor.comuna
     end
 
     column :universidad do |vendedor|
-      link_to vendedor.universidad.nombre, admin_universidad_path(vendedor.universidad)
+      (link_to vendedor.universidad.nombre, admin_universidad_path(vendedor.universidad)) if vendedor.universidad
+    end
+     column :carrera do |vendedor|
+      (link_to vendedor.carrera.nombre, admin_carrera_path(vendedor.carrera)) if vendedor.carrera
     end
    end
 
@@ -49,6 +52,10 @@ ActiveAdmin.register Vendedor do
 	      link_to vendedor.universidad.nombre, admin_universidad_path(vendedor.universidad)
 	    end
 
+	     row :carrera do |vendedor|
+	      link_to vendedor.carrera.nombre, admin_carrera_path(vendedor.carrera)
+	    end
+
 
       end
       
@@ -68,6 +75,7 @@ ActiveAdmin.register Vendedor do
         f.input :comuna, :label => 'Comuna', :as => :select, :collection => Comuna.all.map{|u| ["#{u.nombre}", u.id]}
     
         f.input :universidad, :label => 'Universidad', :as => :select, :collection => Universidad.all.map{|u| ["#{u.nombre}", u.id]}
+    	f.input :carrera, :label => 'Carrera', :as => :select, :collection => Carrera.all.map{|u| ["#{u.nombre}", u.id]}
     
       end
       f.inputs "Activacion" do

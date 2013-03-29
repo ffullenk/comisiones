@@ -6,7 +6,7 @@ class CatalogosController < ApplicationController
 
 
   def catalogo_vendedor
-  	@catalogos = Catalogo.where(:vendedor_id => params[:vendedor_id])
+  	@catalogos = Catalogo.where(:vendedor_id => current_vendedor.id)
 
 
   end
