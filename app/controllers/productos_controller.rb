@@ -30,15 +30,18 @@ before_filter :authenticate_empresa!, :only => [:new,:create,:edit, :update, :de
   def show
     @producto = Producto.find(params[:id])
 
-    @catalogo = Catalogo.where(:vendedor_id=>current_vendedor.id, :producto_id=>@producto.id)
+    if current_vendedor
+
+      @catalogo = Catalogo.where(:vendedor_id=>current_vendedor.id, :producto_id=>@producto.id)
 
 
-    if @catalogo.empty?
-      @enCatalogo = false
-    else
-      @enCatalogo = true
+      if @catalogo.empty?
+        @enCatalogo = false
+      else
+        @enCatalogo = true
+      end
     end
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @producto }
@@ -84,7 +87,7 @@ before_filter :authenticate_empresa!, :only => [:new,:create,:edit, :update, :de
 
     respond_to do |format|
       if @producto.update_attributes(params[:producto])
-        format.html { redirect_to @producto, notice: 'El Producto fue actualizado exitosamente.' }
+        format.html { redirect_to producto_empresa_path(current_empresa.id,@producto), notice: 'El Producto fue actualizado exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
