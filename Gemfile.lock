@@ -83,9 +83,10 @@ GEM
     diff-lcs (1.2.1)
     dropbox-sdk (1.5.1)
       json
-    errorapp_notifier (7.0.1)
     erubis (2.7.0)
     eventmachine (1.0.3)
+    exception_notification (3.0.1)
+      actionmailer (>= 3.0.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.8.6)
@@ -251,7 +252,7 @@ DEPENDENCIES
   chilean_cities!
   coffee-rails (~> 3.2.1)
   devise
-  errorapp_notifier
+  exception_notification
   google-analytics-rails
   jquery-rails
   less-rails

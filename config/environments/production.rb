@@ -68,4 +68,13 @@ Comisiones::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+
+
 end
+
+
+  Comisiones::Application.config.middleware.use ExceptionNotifier,
+  :email_prefix => "[Comisiones.cl] ",
+  :sender_address => %{"noresponder" <noresponder@comisiones.cl>},
+  :exception_recipients => %w{francisco000.1@gmail.com}
