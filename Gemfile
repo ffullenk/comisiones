@@ -44,3 +44,4 @@ gem 'sass-rails'
 gem 'google-analytics-rails'
 gem 'better_errors'
 gem "binding_of_caller"
+gem 'newrelic_rpm'

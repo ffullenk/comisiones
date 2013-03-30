@@ -132,6 +132,7 @@ GEM
     multipart-post (1.2.0)
     nested_scaffold (0.2.1)
       rails (~> 3.2.2)
+    newrelic_rpm (3.6.0.78)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -255,6 +256,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   nested_scaffold
+  newrelic_rpm
   omniauth-facebook
   paperclip
   paperclip-dropbox
