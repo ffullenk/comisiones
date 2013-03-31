@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= content_for?(:title) ? yield(:title) : "Comisiones" %></title>
-  <meta name="description" content="¿Eres estudiante universitario? ¿Te falta dinero? ...Elige productos de nuestro catálogo y véndelos! Sin contratos ni horarios y recibe el pago de tu comisión directamente a tu bolsillo!">
-  <meta name="keywords" content="comisiones trabajo part-time medio tiempo por horas vendedor comisiones.cl universitario dinero sin horarios ventas">
-  <meta name="author" content="Comisiones.cl">
-
-  ">
-  <%= stylesheet_link_tag "application", :media =>
-  "all" %>
+  
+  <%= render 'layouts/meta' %>
+  
+  <%= stylesheet_link_tag "application", :media =>"all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
   <%= yield(:head) %></head>
-<body class="<%= controller_name %>
-  <%= action_name %>
-  ">
+<body class="<%= controller_name %> <%= action_name %> ">
+  
   
 
 
