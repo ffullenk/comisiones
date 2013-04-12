@@ -59,7 +59,7 @@ private
   end
 
   def mailActivacion
-    if active?
+    if active? and (sign_in_count.eql? 0)
       VendedorMailer.activation_mail(self).deliver
 
     end
