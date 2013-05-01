@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails'
-
+gem 'thin'
 group :assets do
 	gem 'sass-rails'
   gem "less-rails"
