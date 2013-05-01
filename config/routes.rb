@@ -1,13 +1,13 @@
 Comisiones::Application.routes.draw do
 
 
-
+  devise_for :vendedors, :path_prefix => 'auth'
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :clientes
-
+  
 
   resources :catalogos
 
@@ -18,7 +18,7 @@ Comisiones::Application.routes.draw do
     resources :pedidos
   end
   resources :pedidos
-  devise_for :vendedors
+  
 
   root :to => "home#index"
   match '/legal' => 'home#legal', :as => "legal"
@@ -44,4 +44,7 @@ Comisiones::Application.routes.draw do
   match "/vendedors/:vendedor_id/comisiones" =>"vendedores#comisiones_vendedor", :as => "comisiones_vendedor"
   match "/vendedors/:vendedor_id" =>"vendedores#miperfil", :as => "miperfil_vendedor"
   #Fin Rutas Vendedores
+
+  
+
 end

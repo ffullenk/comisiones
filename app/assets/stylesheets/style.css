@@ -17,7 +17,7 @@ body .container{
 h1,h2,h3,h4,h5,h6{
 	padding: 2px 0px;
 	margin: 2px 0px;
-	color: #777;
+	color: #34495e;
 }
 
 h2{
@@ -501,7 +501,7 @@ header .logo{
 
 header .logo h1 a, header .logo h1 a:visited, header .logo h1 a:hover{
 	font-size: 35px;
-	color: #777;
+	color: #34495e;
 	text-decoration: none;
 	font-weight: normal;
 }
