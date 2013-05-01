@@ -44,7 +44,7 @@ class PedidosController< ApplicationController
 
   def pedidos_vendedor
       #lista los pedidos que ha generado el vendedor
-    @pedidos = current_vendedor.pedidos
+    @pedidos = current_vendedor.pedidos.page(params[:page])
   end
 
   def show_vendedor

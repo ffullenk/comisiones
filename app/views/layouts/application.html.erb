@@ -1,57 +1,86 @@
 <!DOCTYPE html>
 <html>
-<head>
-  
-  <%= render 'layouts/meta' %>
-  
-  <%= stylesheet_link_tag "application", :media =>"all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-
-  <%= yield(:head) %></head>
-<body class="<%= controller_name %> <%= action_name %> ">
-  
-  
 
 
-  <header class="navbar navbar-inverse navbar-fixed-top">
-    <nav class="navbar-inner">
-      <div class="container">
-        <%= render 'layouts/navigation' %>
-      </div>
-    </nav>
-  </header>
+<%= render 'layouts/head' %>
 
-  <hr>
-  <div id="main" role="main">
 
-    <div class="container">
-      
-        <div class="span12">
-           <%= render 'layouts/messages' %>
-        <%= yield %>
-        </div>
+
+
+
+
+ <body>
+<%= render 'layouts/messages' %>
+   <%= render 'layouts/adminbar' %>
+
+<!-- Header starts -->
+  <%= render 'layouts/header' %>
+
+<!-- Header ends -->
+
+<!-- Main content starts -->
+
+<div class="content">
+
+    <!-- Sidebar -->
     
-    <!--! end of .container --> </div>
-  <!--! end of #main -->
+    <%= render 'layouts/sidebar' %>
+    <!-- Sidebar ends -->
+
+    <!-- Main bar -->
+    <div class="mainbar">
+
+      <!-- Page heading -->
+      <%= render 'layouts/pageheading' %>
+      <!-- Page heading ends -->
+
+      <!-- Matter -->
+
+      <div class="matter">
+        <div class="container-fluid">
+
+         <%= yield %>
 
 
 
+        </div>
+      </div>
 
+    <!-- Matter ends -->
 
-
-
-
-
-
-
-  <hr>
-  <footer>
-    <div class="footer">
-      <p>&copy; Comisiones.cl 2013 </p>
     </div>
-  </footer>
+
+   <!-- Mainbar ends -->        
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+<!-- Footer starts -->
+<footer>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+            <!-- Copyright info -->
+            <p class="copy">Copyright &copy; 2013 | <a href="http://www.comisiones.cl">Comisiones.cl</a> </p>
+      </div>
+    </div>
+  </div>
+</footer>   
+
+<!-- Footer ends -->
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span> 
+
+
+
 </body>
+
+
+
+
+
+
+
 </html>
-
-

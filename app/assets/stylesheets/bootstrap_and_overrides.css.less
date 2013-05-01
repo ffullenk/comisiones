@@ -1,4 +1,5 @@
 @import "twitter/bootstrap/bootstrap";
+body { padding-top: 60px; }
 @import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
@@ -6,19 +7,19 @@
 @iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white");
 
 // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-// Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not
+// Note: If you use asset_path() here, your compiled bootstrap_and_overrides.css will not
 //       have the proper paths. So for now we use the absolute path.
 @fontAwesomeEotPath: asset-path("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-path("fontawesome-webfont.eot#iefix");
 @fontAwesomeWoffPath: asset-path("fontawesome-webfont.woff");
 @fontAwesomeTtfPath: asset-path("fontawesome-webfont.ttf");
 @fontAwesomeSvgPath: asset-path("fontawesome-webfont.svg");
 
 // Font Awesome
-@fontAwesomeEotPath_iefix: asset-path("fontawesome-webfont.eot#iefix");
 @import "fontawesome";
 
 // Glyphicons
-//@import "twitter/bootstrap/sprites.less";
+@import "twitter/bootstrap/sprites.less";
 
 // Your custom LESS stylesheets goes here
 //
@@ -31,6 +32,14 @@
 // Example:
 // @linkColor: #ff0000;
 
-.navbar-inner {
-  background-color: #2c2c2c; /* fallback color, place your own */
-  }
+//.btn-primary:visited {color:#FFFFFF;}
+//.btn-success:visited {color:#FFFFFF;}
+//.btn-danger:visited {color:#FFFFFF;}
+//.btn-warning:visited {color:#FFFFFF;}
+//a:visited {color:#000000;}
+
+
+.radio,
+.checkbox {
+  max-width: 10px;
+}

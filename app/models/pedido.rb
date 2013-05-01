@@ -5,6 +5,8 @@ class Pedido < ActiveRecord::Base
   belongs_to :vendedor
   belongs_to :empresa
   has_one :cliente
+
+  paginates_per 10
 end
 
 

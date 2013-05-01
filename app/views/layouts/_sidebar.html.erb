@@ -1,0 +1,33 @@
+<div class="sidebar">
+        <div class="sidebar-dropdown"><a href="#">Navigation</a></div>
+
+        <!--- Sidebar navigation -->
+        <!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
+        <ul id="nav">
+          <!-- Main menu with font awesome icon -->
+          <li><a href="<%= url_for root_path %>"><i class="icon-home"></i> Inicio</a>
+         
+          </li>
+
+          <li><a href="<%=productos_path%>" > <i class="icon-th-large"></i> Productos</a></li>
+        
+
+
+
+
+           <li><a href="<%=pedidos_vendedor_path(current_vendedor.id) %>" > <i class="icon-user"></i> Mis Pedidos</a></li>
+
+            <li><a href="<%=catalogo_vendedor_path(current_vendedor.id)%>" > <i class="icon-thumbs-up"></i> Mi Catálogo</a></li>
+
+
+             <li><a href="<%=comisiones_vendedor_path(current_vendedor.id)%>" > <i class="icon-eye-open"></i> Mis Comisiones</a></li>
+
+             <li><a href="<%=miperfil_vendedor_path(current_vendedor.id)%>" > <i class="icon-eye-open"></i> Mi Perfil</a></li>
+
+
+
+
+
+         
+        </ul>
+    </div>

@@ -61,7 +61,6 @@ Comisiones::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  GA.tracker = "UA-36562793-1"
   
 
 

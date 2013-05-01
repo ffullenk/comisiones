@@ -41,7 +41,7 @@ Comisiones::Application.routes.draw do
   match "/vendedors/:vendedor_id/pedidos/:pedido_id" =>"pedidos#show_vendedor", :as => "pedido_vendedor"
   match "/vendedors/:vendedor_id/productos/:producto_id/agregar" =>"catalogos#agregar_producto_catalogo_vendedor", :as => "agregar_producto_catalogo_vendedor"
   match "/vendedors/:vendedor_id/pedidos/:pedido_id/agregarcliente" =>"clientes#agregar_cliente_pedido", :as => "agregar_cliente_pedido"
-  match "/vendedors/:vendedor_id/comisiones" =>"home#comisiones_vendedor", :as => "comisiones_vendedor"
+  match "/vendedors/:vendedor_id/comisiones" =>"vendedores#comisiones_vendedor", :as => "comisiones_vendedor"
   match "/vendedors/:vendedor_id" =>"vendedores#miperfil", :as => "miperfil_vendedor"
   #Fin Rutas Vendedores
 end
